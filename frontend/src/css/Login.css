@@ -1,0 +1,143 @@
+.item {
+  width: 100%;
+  height: 550px;
+  max-width: 850px;
+  box-shadow: 0 0 10px 10px rgba(108, 101, 101, 0.4);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  color: aliceblue;
+}
+
+.contact {
+  background-image: url("../../public/login.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.submit-form {
+  background: #11009E;
+  display: flex;
+  /* justify-content: center; Center content horizontally */
+  /* align-items: center; Center content vertically */
+}
+
+.cs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.hello {
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.inputt {
+  margin-top: -50px;
+  padding-left: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputt input[type="email"],
+.inputt input[type="password"] {
+  padding: 8px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 250px;
+}
+
+.inputt input::placeholder {
+  text-align: left;
+}
+
+.inputt button {
+  border: none;
+  color: black;
+  background-color: #EBFFFE;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none; /* Ensure no underline */
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.username {
+  text-align: start;
+}
+
+/* Error message styling */
+.error-message {
+  color: red; /* Set text color to red */
+  font-size: 12px; /* Font size for error messages */
+  margin-top: 4px; /* Space above error messages */
+}
+
+/* Container for centering the item */
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Make the container full height of the viewport */
+  width: 100%; /* Ensure full width */
+}
+
+.hidden-mobile {
+  display: none; /* Hide this element on larger screens */
+}
+
+/* Media Queries to maintain responsiveness */
+@media (max-width: 850px) {
+  .item {
+    grid-template-columns: 1fr; /* Stacks on smaller screens */
+  }
+  .contact {
+    display: none; /* Hide contact section on small screens */
+  }
+}
+
+/* Media Queries to maintain responsiveness */
+@media (max-width: 480px) {
+  .hidden-mobile {
+    display: block; /* Show this element on mobile */
+  }
+  .item {
+    grid-template-columns: 1fr; /* Stacks on the smallest screens */
+    box-shadow: 0 0 10px 10px rgba(108, 101, 101, 0);
+  }
+  
+  .contact {
+    display: none; /* Hide contact section on small screens */
+  }
+
+  .submit-form {
+    background: none; /* Remove background from submit-form */
+  }
+
+  .container {
+    background-image: url("../../public/loginmobile.png");
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100%; /* Ensures the width is 100% */
+    height: 100vh; /* Makes sure it takes up the full height of the viewport */
+  }
+}
+
+
+
+.validation-message {
+  color: red; /* สีของข้อความ */
+  font-size: 14px; /* ขนาดตัวอักษร */
+  margin-top: 10px; /* ระยะห่างด้านบน */
+  text-align: center; /* จัดข้อความไปกลาง */
+}
+

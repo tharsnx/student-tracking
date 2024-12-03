@@ -1,0 +1,663 @@
+.home-container {
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียง */
+  height: 100vh; /* กำหนดความสูงให้เต็มหน้าจอ */
+}
+
+  
+.sidebar {
+  width: 275px;
+  height: 100%;
+  background-color: #11009e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* จัดแนวแนวนอน */
+  padding: 20px 0; /* ปรับ padding */
+  margin: 0;
+}
+
+
+  
+.rec {
+    /* height: 50vh;     */
+    width: 220px;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 20px;
+  }
+  
+.inside {
+    color: black;
+  }
+  
+.progressbar {
+    flex: 1; /* ขยายให้เต็มพื้นที่ที่เหลือ */
+    padding: 20px;
+    background-color: white; /* สีพื้นหลังสำหรับ progress bar */
+    margin-left: 20px; /* ขยับไปทางขวา */
+    position: relative; /* เปลี่ยนเป็น relative สำหรับควบคุมการขยับ */
+    top: 20px; /* ขยับลงล่าง */
+    left: 50px; /* ขยับไปทางขวา */
+  }
+  
+.email, .advisor {
+    text-align: center;
+  }
+  
+.progress-bar {
+    height: 10px;
+    background-color: #76c7c0;
+    border-radius: 25px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 15px;
+  }
+  
+.step {
+    position: relative;
+    z-index: 1;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: #e0e0df;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .step.completed {
+    background-color: #76c7c0;
+  }
+  
+  .navigation-buttons {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .picture{
+    margin-top: 2vh;
+    width: 18vh;
+    height: 18vh;
+  }
+/* .editprogress{
+  height: 100px;
+  width: 150px;
+} */
+.editprogress_input {
+  display: none; /* Hide the file input */
+}
+
+.editprogress_label {
+  height: 50px;
+  width: 100px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Make it clickable */
+  background-color: #de0611;
+}
+
+.editprogress_label:hover {
+  /* color: #000000; */
+  /* border: 1px dashed #de0611; */
+  background-color: #bc0009;
+}
+
+.editprogress{
+  margin-left: 10px;
+}
+
+.editprogress_label_pass{
+  height: 50px;
+  width: 100px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Make it clickable */
+  background-color: #06de14;
+}
+
+.editprogress_label_pass:hover {
+  /* color: #000000; */
+  /* border: 1px dashed #de0611; */
+  background-color: #02af0e;
+}
+
+.popup-modal {
+  position: fixed; /* Ensures the popup stays on top and doesn't scroll with the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Higher z-index to stay above other elements */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1001; /* Higher z-index for the content */
+}
+
+.popup-button {
+  margin-top: 10px;
+  padding: 5px 5px; /* Smaller padding for a smaller button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font size */
+  margin-left: 10px; /* This will add space between the text and the button */
+}
+
+.DonutChart {
+  width: 20%; /* ปรับขนาดให้เหมาะสม */
+  max-width: 300px;
+  position: absolute; /* ตั้งตำแหน่งแบบ absolute */
+  top: 175px; /* ระยะห่างจากด้านบน */
+  right: 5px; /* ระยะห่างจากด้านขวา */
+  height: 100vh;
+}
+
+.items-progress{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  height: 100vh;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+  display: grid; /* Use grid for the entire progress bar container */
+  /* row-gap: 50px;  */
+  height: 100vh;
+}
+
+
+
+.popup-modal {
+  position: fixed; /* Ensures the popup stays on top and doesn't scroll with the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Higher z-index to stay above other elements */
+}
+.popup-content {
+  position: relative;  /* Add this to make sure the button is positioned relative to the popup */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1001;
+  width: 80vh;
+  height: 60vh;
+  overflow-y: auto;
+}
+.popup-button{
+  margin-top: 20px;
+  padding: 5px 10px; /* Smaller padding for a smaller button */
+  background-color: #11009E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font size */
+  
+}
+
+.popup-content ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 courses per row */
+  gap: 10px; /* Space between courses */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.registered{
+  padding: 10px;
+  background-color: #9de67b;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.notregis{
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1002; /* Slightly higher than the popup content */
+  background-color: #dc3545;
+}
+
+.popup-button:hover, .close-popup:hover{
+  opacity: 0.9;
+}
+
+.hidden-mobile {
+  display: none; /* Hide this element on larger screens */
+}
+
+.sidebar-mb {
+  display: none;
+}
+
+
+@media (max-width: 480px) {
+  .hidden-mobile {
+    display: block; /* Show this element on mobile */
+  }
+  .sidebar {
+    display: none;
+    }
+  .sidebar-mb {
+    display: block;
+    width: 400px;
+    height: 170px; 
+    border-radius: 23px;
+    background-color: #D9E3FF;
+    margin-left: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดแนวแนวนอน */
+    padding: 20px 0; /* ปรับ padding */
+  }
+  .rec {
+    height: 170px;
+    width: 140px;
+    background-color: #ffffff;
+    margin-right: 230px;
+    border-radius: 0px;
+  }
+  .picture{
+    margin-left: 5px;
+  }
+  /* .home-container{
+    align-items: center;
+  } */
+
+  .progress-bar-container {
+    display: none;
+  }
+  
+}
+
+
+.box ,.box2{
+  background-color: #EEEEEE;
+  height: 100px;
+  width: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  left: -20px; /* ปรับระยะขยับไปทางซ้าย */
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.editpro{
+  border-radius: 12px;
+  margin: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.editprogress-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+  /* margin-left: 100px; */
+  
+}
+
+.editprogress {
+  flex: 1; /* กำหนดให้ฟอร์มแก้ไข progress ขยายเต็มที่ */
+
+}
+
+.upload-section {
+  flex: 1; /* กำหนดให้ฟอร์มการอัปโหลดไฟล์ขยายเต็มที่ */
+  margin-top: 0;
+  width: 100%; /* กำหนดให้เนื้อหาเต็มกล่อง */
+}
+
+.editprogress_input {
+  display: none;
+}
+
+.editprogress_label, .editprogress_label_pass {
+  padding: 2px 6px;  /* ลด padding ทั้งแนวตั้งและแนวนอน */
+  font-size: 15px;   /* ลดขนาดตัวอักษร */
+  border-radius: 4px;  /* ปรับมุมโค้งให้เล็กลง */
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fc6c85;  /* สีพื้นหลัง */
+  color: white;   /* สีตัวอักษร */
+}
+
+
+.editprogress_label_pass {
+  background-color: #90ef90;
+}
+
+.editprogress_label:hover {
+  background-color: #bc0009;
+}
+
+.editprogress_label_pass:hover {
+  background-color: #02af0e;
+}
+
+.confirm {
+  position: absolute; /* Change to absolute for better control */
+  bottom: -140px;
+  right: 100px;
+  height: 50px; /* Set the height of the button */
+  padding: 10px 20px;
+  background-color: #11009E; /* Button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.confirm:hover {
+  background-color: #4434d5;
+}
+
+.box-edit{
+  display: flex;
+  flex-direction: column; /* Keep elements stacked vertically */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+  padding: 50px; /* Padding around the box */
+  min-height: 200px; /* Minimum height */
+  border-radius: 8px;
+  gap: 20px; /* Equal spacing between all child elements */
+}
+
+.file {
+  border: 1px solid #ccc; /* กำหนดกรอบ */
+  padding: 8px; /* ระยะห่างภายในกรอบ */
+  border-radius: 5px; /* มุมกรอบมน */
+  margin-top: 5px; /* ระยะห่างด้านบน */
+  background-color: #f9f9f9; /* สีพื้นหลัง */
+  text-decoration: none;
+  width: 210px;
+  position: relative; /* ตั้งค่าเพื่อให้ไอคอนใช้ตำแหน่งสัมพันธ์ */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างไฟล์ */
+}
+
+.file a {
+  text-decoration: none;
+  color: black; /* เปลี่ยนสีข้อความถ้าต้องการ */
+  font-size: 12px;
+  padding-top: 2px; /* เพิ่มพื้นที่ด้านบน */
+  position: relative; /* ใช้ร่วมกับ top */
+  top: -5px; /* ย้ายขึ้น */
+  flex-grow: 1; /* ขยาย link ให้เต็มที่ */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.delete-icon {
+  position: absolute;
+  right: 0px; /* ระยะห่างจากขอบขวาของกรอบ */
+  cursor: pointer;
+  color: red;
+  font-size: 30px;
+}
+
+.course-id{
+  padding: 5px;
+  margin: 2px;
+}
+
+.box-research {
+  border: 2px solid #ccc; /* Border with a solid line and light gray color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Reduced padding */
+  background-color: #f9f9f9;
+  width: fit-content;
+}
+
+.choosefile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  width: 250px;
+  height: 65px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  /* margin-bottom: 10px; */
+}
+
+.file-upload-container:hover {
+  border-color: #007bff;
+}
+
+.file-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #007bff;
+  font-size: 14px; /* Slightly smaller font */
+  cursor: pointer;
+}
+
+.file-upload-icon {
+  font-size: 18px; /* Slightly smaller icon */
+  background-color: #007bff;
+  color: white;
+  width: 22px; /* Reduced width */
+  height: 22px; /* Reduced height */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* input[type="file"] {
+  display: none;
+} */
+
+.button-save {
+  background-color: #999;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* margin-top: 10px; */
+}
+
+.button-save1{
+  position: absolute; /* Change to absolute for better control */
+  bottom: -140px;
+  right: 200px;
+  height: 50px; /* Set the height of the button */
+  padding: 10px 20px;
+  background-color: #378a11; /* Button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown {
+  width: 250px; /* Same width as .file-upload-container */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* .button-save:hover {
+  background-color: #4434d5;
+} */
+
+.grad-button{
+  margin-top: 20px;
+  padding: 20px 30px; /* Smaller padding for a smaller button */
+  background-color: #11009E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px; /* Smaller font size */
+}
+
+.editprogress,
+.upload-section,
+.confirm {
+
+  margin: 0; /* Remove any additional margins */
+}
+
+.box p,.box2 p {
+  margin: 0; /* ลบระยะห่างตามค่าเริ่มต้น */
+  margin-right: 10px; /* เพิ่มระยะห่างระหว่างข้อความกับปุ่ม */
+}
+
+.custom-dialog .MuiDialog-paper {
+  min-width: 400px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.custom-dialog-title {
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลางในแนวนอน */
+  margin-bottom: 16px; /* เพิ่มระยะห่างระหว่างข้อความและปุ่ม */
+}
+
+.custom-dialog-actions {
+  display: flex;
+  justify-content: center; /* จัดปุ่มให้อยู่ตรงกลาง */
+  width: 100%;
+}
+
+/* DialogStyles.css */
+
+/* สไตล์สำหรับปุ่มยกเลิก */
+.cancel-button {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+/* สไตล์สำหรับปุ่มยืนยัน */
+.confirm-button {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.editprogress_label1 {
+  width: 250px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Make it clickable */
+  background-color: #fc6c85;
+  color: white;
+}
+
+.editprogress_label1:hover {
+  /* color: #000000; */
+  /* border: 1px dashed #de0611; */
+  background-color: #bc0009;
+  color: white;
+}
+
+.editprogress_label_pass1{
+  width: 250px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Make it clickable */
+  background-color: #90ef90;
+  color: white;
+}
+
+.editprogress_label_pass1:hover {
+  /* color: #000000; */
+  /* border: 1px dashed #de0611; */
+  background-color: #02af0e;
+  color: white;
+}
+

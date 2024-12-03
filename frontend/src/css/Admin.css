@@ -1,0 +1,101 @@
+.admin-page-header {
+  padding: 10px 15px;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: right; /* Center vertically */
+  align-items: right; /* Center horizontally */
+  height: 100%; /* Ensure the box stretches to its parent container's height */
+}
+
+
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+  color: black;
+  border-radius: 20px; /* Rounded corners */
+  overflow: hidden; /* Ensures rounded corners */
+  margin-top: 10px;
+  margin: 1%;
+}
+
+th,
+td {
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid #cccccc;
+}
+
+th {
+  background-color: #11009E; /* Dark blue header */
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Light gray for odd rows */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e6f2ff; /* Light blue for even rows */
+}
+
+td {
+  color: #333333;
+}
+
+.admin-container {
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.contain {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contain button {
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: solid black 1px;
+  color: #000000;
+  background-color: #D9E3FF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contain button:hover {
+  background-color: #a5cff9; 
+}
+
+button.edit, button.delete {
+  margin-right: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+}
+
+button.delete {
+  background-color: #f44336; 
+}
+
+button.edit:hover {
+  background-color: #45a049;
+}
+
+button.delete:hover {
+  background-color: #d32f2f;
+}

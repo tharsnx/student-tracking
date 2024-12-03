@@ -1,0 +1,43 @@
+.navbar-text {
+  color: white; /* Text color for the second navbar */
+}
+
+
+/* DialogStyles.css */
+.custom-dialog .MuiDialog-paper {
+  min-width: 400px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.custom-dialog-title {
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลางในแนวนอน */
+  margin-bottom: 16px; /* เพิ่มระยะห่างระหว่างข้อความและปุ่ม */
+}
+
+.custom-dialog-actions {
+  display: flex;
+  justify-content: center; /* จัดปุ่มให้อยู่ตรงกลาง */
+  width: 100%;
+}
+
+/* DialogStyles.css */
+
+/* สไตล์สำหรับปุ่มยกเลิก */
+.cancel-button {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+/* สไตล์สำหรับปุ่มยืนยัน */
+.confirm-button {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+

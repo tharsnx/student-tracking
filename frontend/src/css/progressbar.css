@@ -1,0 +1,142 @@
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+  /* display: grid; */
+}
+
+.step {
+  
+  display: flex;
+  flex-direction: column;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; /* Define two columns: one for the circle, and one for the step name */
+  /* align-items: center; */
+  column-gap: 35px; /* Adjust spacing between the circle and step name */
+  margin-bottom: 30px; /* Space between steps */
+  padding-bottom: 35px; /* Add padding to increase the height of each step */
+  margin-top: -5px;
+  position: relative; /* Position relative for absolute positioning of line */
+  background-color: transparent !important;
+  position: relative;
+  padding-left: 10px; /* Optional: Adjust padding if necessary */
+
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0; /* Ensure no margin below the circle */
+  position: relative; /* Make the circle position relative */
+  z-index: 1; /* Ensure the circle is above the line */
+  left: 50px;
+}
+
+.line {
+  width: 7px;
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 30px; /* Adjust this to position the line correctly */
+  left: 72px; /* Center align the line with the circle */
+  height: 100%;
+  
+}
+
+.completed .line {
+  background-color: orange; /* Color for completed line */
+}
+
+.completed .circle {
+  background-color: orange; /* Color for completed circle */
+  border-color: orange; /* Border color for completed circle */
+  color: white; /* Text color for completed circle */
+}
+
+.step-name {
+  text-align:left; /* Center the step names */
+  margin-top: 5px;
+  color: black;
+}
+
+.step-title {
+  font-weight: bold;
+}
+
+.step-date {
+  color: gray;
+  font-size: 0.9em;
+}
+
+.step-description {
+  margin-top: 5px;
+}
+
+.detail {
+  font-size: 0.8em; /* Smaller text for details */
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 73, 73, 0.5);
+  z-index: 999;
+  font-size: 0.8em;
+}
+
+/* .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+} */
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* .DonutChart {
+  width: 75%;
+  max-width: 400px;
+} */
+
+.file {
+  border: 1px solid #ccc; /* กำหนดกรอบ */
+  padding: 2px; /* ระยะห่างภายในกรอบ */
+  border-radius: 5px; /* มุมกรอบมน */
+  margin-top: 5px; /* ระยะห่างด้านบน */
+  background-color: #f9f9f9; /* สีพื้นหลัง */
+  text-decoration: none;
+  width: 250px;
+}
+
+.file a {
+  text-decoration: none;
+  color: black; /* เปลี่ยนสีข้อความถ้าต้องการ */
+  font-size: 12px;
+  padding-top: 2px; /* เพิ่มพื้นที่ด้านบน */
+  position: relative; /* ใช้ร่วมกับ top */
+  top: -5px; /* ย้ายขึ้น */
+}
